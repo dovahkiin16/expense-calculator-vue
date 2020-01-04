@@ -6,7 +6,8 @@
                     <v-card-title>Expense Calculator</v-card-title>
                     <v-divider/>
                     <v-card-text>
-
+                        <v-text-field label="Username"/>
+                        <v-text-field label="Password" type="password"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -19,9 +20,9 @@
 </template>
 
 <script>
-    export default {
-        name: 'login',
-    }
+  export default {
+    name: 'login',
+  }
 </script>
 
 <style scoped>
