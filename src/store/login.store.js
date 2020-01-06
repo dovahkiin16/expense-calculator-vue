@@ -36,12 +36,12 @@ export default {
       try {
         const response = await axios.post(`/users/login`, user)
 
-        context.commit('user/updateUser', response.data)
+        context.commit('user/updateUser', response.data, {root: true})
       } catch (e) {
         // Check if have response
         console.log(e)
         if (e.response) {
-          context.commit('updateErrorMessage', e.response.message)
+          context.commit('updateErrorMessage', e.response.data.message)
         } else if (e.request) {
           context.commit('updateErrorMessage', 'Please check your internet connection')
         }
