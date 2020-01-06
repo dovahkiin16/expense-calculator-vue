@@ -1,12 +1,14 @@
 <template>
     <div class="app-container">
-        <v-app-bar>
+        <nav-drawer/>
+        <v-app-bar app clipped-left>
             <v-toolbar-title>Expense Calculator</v-toolbar-title>
         </v-app-bar>
-        <nav-drawer/>
-        <v-container>
-            <router-view/>
-        </v-container>
+        <v-content>
+            <v-container fluid>
+                <router-view/>
+            </v-container>
+        </v-content>
     </div>
 </template>
 

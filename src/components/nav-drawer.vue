@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer permanent clipped>
+    <v-navigation-drawer app clipped>
         <v-list dense nav>
             <v-list-item
                     :key="item.title"
