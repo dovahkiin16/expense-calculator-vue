@@ -6,13 +6,13 @@
                     <v-card-title>Expense Calculator</v-card-title>
                     <v-divider/>
                     <v-card-text>
-                        <v-alert v-if="error" type="error" text>{{error}}</v-alert>
-                        <v-text-field label="Username" :value="username" @input="updateUsername"/>
-                        <v-text-field label="Password" type="password" :value="password" @input="updatePassword"/>
+                        <v-alert text type="error" v-if="error">{{error}}</v-alert>
+                        <v-text-field :value="username" @input="updateUsername" label="Username"/>
+                        <v-text-field :value="password" @input="updatePassword" label="Password" type="password"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
-                        <v-btn color="primary" @click="login" :disabled="isLoggingIn">Login</v-btn>
+                        <v-btn :disabled="isLoggingIn" @click="clickLogin" color="primary">Login</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -27,10 +27,19 @@
     name: 'login',
     computed: {
       ...mapState('login', ['username', 'password', 'isLoggingIn', 'error']),
+      ...mapState('user', ['id'])
     },
     methods: {
       ...mapMutations('login', ['updateUsername', 'updatePassword']),
-      ...mapActions('login', ['login']),
+      ...mapActions('login', ['sendLogin']),
+
+      async clickLogin() {
+        await this.sendLogin()
+
+        if (this.id) {
+          await this.$router.push('/')
+        }
+      }
     }
   }
 </script>

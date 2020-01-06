@@ -26,7 +26,7 @@ export default {
   },
 
   actions: {
-    login: async (context) => {
+    sendLogin: async (context) => {
       context.commit('updateLoggingInState', true)
       const user = {
         username: context.state.username,
