@@ -17,6 +17,14 @@ const routes = [
     name: 'home',
     component: () => import(/* webpackChunkName: "home-group" */ '../views/Home'),
     beforeEnter: authOnly,
+    children: [
+      {
+        path: 'expenses',
+        name: 'expenses',
+        component: () => import(/* webpackChunkName: "home-group" */ '../views/Expenses'),
+        beforeEnter: authOnly,
+      }
+    ],
   }
 ]
 

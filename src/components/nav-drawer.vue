@@ -7,7 +7,7 @@
                     v-for="item in items"
             >
                 <v-list-item-icon>
-                    <v-icon>{{item.icon}}</v-icon>
+                    <v-icon>mdi-{{item.icon}}</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                     <v-list-item-title>{{item.title}}</v-list-item-title>
@@ -23,7 +23,8 @@
     data() {
       return {
         items: [
-          {title: 'Home', icon: 'mdi-home', link: '/'}
+          {title: 'Home', icon: 'home', link: '/'},
+          {title: 'Expenses', icon: 'cash-multiple', link: '/expenses'},
         ]
       }
     },

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import VuexPersistence from 'vuex-persist'
 import login from './login.store'
 import user from './user.store'
+import expenses from './expenses.store'
 
 Vue.use(Vuex)
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
   modules: {
     login,
     user,
+    expenses,
   },
   plugins: [vuexLocal.plugin]
 })
