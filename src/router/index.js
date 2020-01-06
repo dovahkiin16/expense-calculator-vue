@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
+import {authOnly, noAuth} from "./guards"
 
 Vue.use(VueRouter)
 
@@ -8,8 +9,14 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    beforeEnter: noAuth,
   },
+  {
+    path: '/',
+    name: 'home',
+    beforeEnter: authOnly,
+  }
 ]
 
 const router = new VueRouter({
