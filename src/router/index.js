@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
-import {authOnly, noAuth} from "./guards"
+import {authOnly, noAuth} from './guards'
 
 Vue.use(VueRouter)
 
@@ -15,6 +15,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    component: () => import(/* webpackChunkName: "home-group" */ '../views/Home'),
     beforeEnter: authOnly,
   }
 ]
