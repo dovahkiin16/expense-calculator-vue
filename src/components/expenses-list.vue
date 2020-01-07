@@ -1,12 +1,14 @@
 <template>
-    <v-list two-line>
+    <v-list two-line dense>
         <v-list-item
                 v-for="expense in expenses"
                 :key="expense.id"
         >
-            <v-list-item-icon>{{getIcon(expense.type)}}</v-list-item-icon>
+            <v-list-item-icon>
+                <v-icon>mdi-{{getIcon(expense.expense_type)}}</v-icon>
+            </v-list-item-icon>
             <v-list-item-content>
-                <v-list-item-title>{{expense.amount}} - {{expense.type}}</v-list-item-title>
+                <v-list-item-title>{{expense.amount}} - {{expense.expense_type}}</v-list-item-title>
                 <v-list-item-subtitle>{{expense.created_at}}</v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
@@ -14,15 +16,19 @@
 </template>
 
 <script>
+  import {mapActions, mapState} from 'vuex'
+
   export default {
     name: 'expenses-list',
-    data() {
-      return {
-        expenses: []
-      }
+    async mounted() {
+      await this.fetchExpenses()
     },
-    computed: {},
+    computed: {
+      ...mapState('expenses', ['expenses', 'error'])
+    },
     methods: {
+      ...mapActions('expenses', ['fetchExpenses']),
+
       getIcon(expenseType) {
         switch (expenseType) {
           case 'rent':
@@ -38,7 +44,8 @@
           case 'savings':
             return 'piggy-bank'
         }
-      }
+      },
+
     }
   }
 </script>

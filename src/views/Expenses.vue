@@ -2,7 +2,8 @@
     <v-container>
         <v-card>
             <v-card-title>Expenses</v-card-title>
-            <v-card-text>
+            <v-divider/>
+            <v-card-text class="pa-0">
                 <expenses-list/>
             </v-card-text>
         </v-card>
