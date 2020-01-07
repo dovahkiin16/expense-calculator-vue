@@ -1,7 +1,11 @@
 <template>
     <div class="app-container">
         <nav-drawer/>
-        <v-app-bar app clipped-left>
+        <v-app-bar
+                app
+                clipped-left
+                color="primary"
+        >
             <v-toolbar-title>Expense Calculator</v-toolbar-title>
         </v-app-bar>
         <v-content>

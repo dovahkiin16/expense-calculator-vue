@@ -1,9 +1,13 @@
 <template>
     <v-navigation-drawer app clipped>
-        <v-list dense nav>
+        <v-list
+                dense
+                nav
+        >
             <v-list-item
                     :key="item.title"
                     :to="item.link"
+                    color="secondary"
                     v-for="item in items"
             >
                 <v-list-item-icon>
