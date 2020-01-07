@@ -5,11 +5,11 @@
                 :key="expense.id"
         >
             <v-list-item-icon>
-                <v-icon>mdi-{{getIcon(expense.expense_type)}}</v-icon>
+                <v-icon :color="expense.need ? 'success' : 'error'">mdi-{{getIcon(expense.expense_type)}}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-                <v-list-item-title>{{expense.amount}} - {{expense.expense_type}}</v-list-item-title>
-                <v-list-item-subtitle>{{expense.created_at}}</v-list-item-subtitle>
+                <v-list-item-title v-text="`${expense.amount} - ${expense.expense_type}`"/>
+                <v-list-item-subtitle v-text="formatDate(expense.created_at)"/>
             </v-list-item-content>
         </v-list-item>
     </v-list>
@@ -45,8 +45,22 @@
             return 'piggy-bank'
         }
       },
+      formatDate: function (date) {
+        const baseDate = new Date(`${date}`)
+        const monthNames = [
+          'January', 'February', 'March',
+          'April', 'May', 'June', 'July',
+          'August', 'September', 'October',
+          'November', 'December'
+        ]
 
-    }
+        const day = baseDate.getDate()
+        const monthIndex = baseDate.getMonth()
+        const year = baseDate.getFullYear()
+
+        return `${monthNames[monthIndex]} ${day}, ${year}`
+      }
+    },
   }
 </script>
 
