@@ -1,13 +1,13 @@
 <template>
     <v-container>
         <v-row>
-            <v-col cols="3">
+            <v-col cols="2">
                 <expense-tile
                         :need="false"
                         title="Extra Expenses"/>
             </v-col>
 
-            <v-col cols="3">
+            <v-col cols="2">
                 <expense-tile
                         :from="startOfMonthFmt"
                         :until="endOfMonthFmt"
@@ -15,7 +15,7 @@
                         type="food"/>
             </v-col>
 
-            <v-col cols="3">
+            <v-col cols="2">
                 <expense-tile
                         :from="startOfMonthFmt"
                         :until="endOfMonthFmt"
@@ -23,7 +23,7 @@
                         type="utility"/>
             </v-col>
 
-            <v-col cols="3">
+            <v-col cols="2">
                 <expense-tile
                         :from="startOfMonthFmt"
                         :until="endOfMonthFmt"
