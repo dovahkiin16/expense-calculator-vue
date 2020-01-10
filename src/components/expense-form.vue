@@ -82,9 +82,15 @@
       ...mapActions('expenses', ['postNewExpense']),
       async submit() {
         this.form.amount = parseFloat(this.form.amount)
+
         if (!this.form.description) {
           delete this.form.description
         }
+
+        if (!this.form.need) {
+          this.form.need = false
+        }
+
         try {
           await this.postNewExpense(this.form)
 
