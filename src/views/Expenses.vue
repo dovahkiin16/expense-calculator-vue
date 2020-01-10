@@ -7,6 +7,9 @@
                 <expenses-list/>
             </v-card-text>
         </v-card>
+        <v-btn bottom color="secondary" fab fixed right :to="form">
+            <v-icon>mdi-plus</v-icon>
+        </v-btn>
     </v-container>
 </template>
 
@@ -15,7 +18,12 @@
 
   export default {
     name: 'expenses',
-    components: {ExpensesList}
+    components: {ExpensesList},
+    data() {
+      return {
+        form: {name: 'expense-form'}
+      }
+    }
   }
 </script>
 

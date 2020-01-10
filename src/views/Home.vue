@@ -8,7 +8,7 @@
         >
             <v-toolbar-title>Expense Calculator</v-toolbar-title>
         </v-app-bar>
-        <v-content>
+        <v-content class="app-container">
             <v-container fluid>
                 <router-view/>
             </v-container>

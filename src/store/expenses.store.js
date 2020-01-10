@@ -39,6 +39,13 @@ export default {
       let url = `users/${user_id}/expenses/sum?`
 
       return axios.get(url, {params: payload})
+    },
+
+    postNewExpense: async (context, payload) => {
+      const user_id = context.rootState.user.id
+      let url = `users/${user_id}/expenses`
+
+      return axios.post(url, payload)
     }
   },
 }

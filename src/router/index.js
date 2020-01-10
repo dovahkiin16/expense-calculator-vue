@@ -28,6 +28,12 @@ const routes = [
         name: 'expenses',
         component: () => import(/* webpackChunkName: "home-group" */ '../views/Expenses'),
         beforeEnter: authOnly,
+      },
+      {
+        path: 'expenses/new',
+        name: 'expense-form',
+        component: () => import(/* webpackChunkName: "home-group" */ '../views/ExpenseFormView'),
+        beforeEnter: authOnly,
       }
     ],
   }
