@@ -32,6 +32,13 @@ export default {
           context.commit('updateError', 'Please check your internet connection')
         }
       }
+    },
+
+    getExpensesSum: async (context, payload) => {
+      const user_id = context.rootState.user.id
+      let url = `users/${user_id}/expenses/sum?`
+
+      return axios.get(url, {params: payload})
     }
   },
 }

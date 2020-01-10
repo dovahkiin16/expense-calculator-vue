@@ -14,10 +14,15 @@ const routes = [
   },
   {
     path: '/',
-    name: 'home',
     component: () => import(/* webpackChunkName: "home-group" */ '../views/Home'),
     beforeEnter: authOnly,
     children: [
+      {
+        path: '',
+        name: 'dashboard',
+        component: () => import(/* webpackChunkName: "home-group" */ '../views/Dashboard'),
+        beforeEnter: authOnly,
+      },
       {
         path: 'expenses',
         name: 'expenses',
