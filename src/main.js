@@ -7,7 +7,7 @@ import axios from 'axios'
 import './global.filters'
 
 Vue.config.productionTip = false
-axios.defaults.baseURL = "http://localhost:8001"
+axios.defaults.baseURL = process.env.VUE_APP_BACKEND
 
 new Vue({
   vuetify,
