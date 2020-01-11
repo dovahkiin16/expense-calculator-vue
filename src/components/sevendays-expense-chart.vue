@@ -31,7 +31,6 @@
         responsive: true,
         maintainAspectRatio: false,
       }
-      console.log(options)
       const labels = []
       let d1p = [] // data request holder for dataset 1
       let d2p = [] // data request holder for dataset 2

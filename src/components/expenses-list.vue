@@ -35,7 +35,7 @@
             return 'home'
           case 'food':
             return 'food'
-          case 'utilities':
+          case 'utility':
             return 'flash'
           case 'transportation':
             return 'motorbike'

@@ -71,7 +71,7 @@
           {text: 'Transportation', value: 'transportation'},
           {text: 'Loan', value: 'loan'},
           {text: 'Rent', value: 'rent'},
-          {text: 'Utilities', value: 'utilities'},
+          {text: 'Utility', value: 'utility'},
         ],
         alertMsg: '',
         showAlert: false,
