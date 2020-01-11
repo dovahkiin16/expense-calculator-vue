@@ -30,16 +30,22 @@
                         title="Total Expenses"/>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col cols="12">
+                <sevendays-expense-card/>
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
 <script>
   import {endOfMonth, format, startOfMonth} from 'date-fns'
   import ExpenseTile from '../components/expense-tile'
+  import SevendaysExpenseCard from '../components/sevendays-expense-card'
 
   export default {
     name: 'dashboard',
-    components: {ExpenseTile},
+    components: {SevendaysExpenseCard, ExpenseTile},
     created() {
     },
     computed: {
