@@ -72,6 +72,8 @@
           {text: 'Loan', value: 'loan'},
           {text: 'Rent', value: 'rent'},
           {text: 'Utility', value: 'utility'},
+          {text: 'Toiletries', value: 'toiletries'},
+          {text: 'New Item', value: 'new item'},
         ],
         alertMsg: '',
         showAlert: false,
@@ -96,7 +98,7 @@
 
           this.alertMsg = 'New Expense created!'
           this.alertType = 'success'
-          this.form = this.initialForm
+          this.form = Object.assign({}, this.initialForm)
         } catch (e) {
           this.alertMsg = e.response.data.message
           this.alertType = 'error'
