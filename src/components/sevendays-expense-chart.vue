@@ -59,13 +59,13 @@
         labels,
         datasets: [
           {
-            label: 'Excess expenses',
+            label: 'Excess Food Expenses',
             backgroundColor: '#EF5350',
             lineTension: 0,
             data: d2
           },
           {
-            label: 'All',
+            label: 'All Food Expense',
             backgroundColor: '#9CCC65',
             lineTension: 0,
             data: d1
