@@ -43,6 +43,10 @@
             return 'coin'
           case 'savings':
             return 'piggy-bank'
+          case 'new item':
+            return 'new-box'
+          case 'toiletries':
+            return 'toilet'
         }
       },
       formatDate: function (date) {
