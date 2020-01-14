@@ -27,6 +27,14 @@
                 <expense-tile
                         :from="startOfMonthFmt"
                         :until="endOfMonthFmt"
+                        title="Transportation Expenses"
+                        type="transportation"/>
+            </v-col>
+
+            <v-col cols="2">
+                <expense-tile
+                        :from="startOfMonthFmt"
+                        :until="endOfMonthFmt"
                         title="Total Expenses"/>
             </v-col>
         </v-row>
