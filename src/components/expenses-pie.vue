@@ -54,7 +54,8 @@
         datasets: [
           {
             backgroundColor: colors,
-            data
+            data,
+            borderWidth: 0
           }
         ]
       }
