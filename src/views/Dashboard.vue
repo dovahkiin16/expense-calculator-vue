@@ -39,8 +39,11 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="12">
+            <v-col cols="8">
                 <sevendays-expense-card/>
+            </v-col>
+            <v-col cols="4">
+                <expense-pie-card/>
             </v-col>
         </v-row>
     </v-container>
@@ -50,10 +53,11 @@
   import {endOfMonth, format, startOfMonth} from 'date-fns'
   import ExpenseTile from '../components/expense-tile'
   import SevendaysExpenseCard from '../components/sevendays-expense-card'
+  import ExpensePieCard from '../components/expense-pie-card'
 
   export default {
     name: 'dashboard',
-    components: {SevendaysExpenseCard, ExpenseTile},
+    components: {ExpensePieCard, SevendaysExpenseCard, ExpenseTile},
     created() {
     },
     computed: {
