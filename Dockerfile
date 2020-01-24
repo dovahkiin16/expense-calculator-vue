@@ -11,5 +11,7 @@ RUN npm run build
 
 FROM nginx:mainline-alpine
 
+EXPOSE 80
+
 COPY --from=build /usr/src/expense-calculator/dist /usr/share/nginx/html
 
